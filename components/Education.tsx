@@ -2,81 +2,57 @@ export default function Education() {
   const educationList = [
     {
       level: "Sekolah Menengah Kejuruan (SMK)",
-      schoolName: "SMK Telkom Malang",
+      school: "SMK Telkom Malang",
       major: "Rekayasa Perangkat Lunak (RPL)",
-      period: "2024 — Sekarang",
-      description: "Fokus mendalami pengembangan Front-End Web, pemrograman berorientasi objek, struktur data, serta kolaborasi proyek perangkat lunak.",
-      status: "Aktif",
+      year: "2023 — Sekarang (Kelas 12)",
+      desc: "Mempelajari pengembangan perangkat lunak, pemrograman web, UI/UX design, dan database.",
     },
     {
       level: "Sekolah Menengah Pertama (SMP)",
-      schoolName: "MTS MODERN AL-RIFA'IE 2 GONDANGLEGI",
+      school: "SMP Negeri",
       major: "Reguler",
-      period: "2021 — 2024",
-      description: "Menyelesaikan pendidikan menengah pertama dengan aktif mengikuti berbagai kegiatan sekolah.",
-      status: "Lulus",
+      year: "2020 — 2023",
+      desc: "Aktif dalam pembelajaran dasar ilmu komputer dan kegiatan sekolah.",
     },
     {
       level: "Sekolah Dasar (SD)",
-      schoolName: "SDN BUMIAYU 4 MALANG", 
+      school: "SD Negeri",
       major: "Reguler",
-      period: "2015 — 2021",
-      description: "Menyelesaikan pendidikan dasar dan membangun fondasi kedisiplinan serta semangat belajar.",
-      status: "Lulus",
+      year: "2014 — 2020",
+      desc: "Menyelesaikan pendidikan dasar dengan baik.",
     },
   ];
 
   return (
-    <section id="education" className="py-28 px-10 bg-slate-950 border-t border-slate-800/60">
+    <section id="education" className="py-28 px-6 md:px-10 border-t border-slate-800/60">
       <div className="max-w-7xl mx-auto">
-        
-        {/* Header Section */}
-        <div className="mb-16">
-          <span className="inline-block py-1.5 px-4 rounded-full bg-blue-500/10 text-blue-400 text-sm font-semibold mb-4 border border-blue-500/20">
-            Latar Belakang Akademik
+        <div className="mb-14 text-center md:text-left">
+          <span className="inline-block py-1.5 px-4 rounded-full bg-blue-500/10 text-blue-400 text-xs md:text-sm font-semibold mb-4 border border-blue-500/20">
+            Latar Belakang
           </span>
-          <h2 className="text-4xl font-extrabold tracking-tight mb-3 text-slate-100">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3 text-slate-100">
             Riwayat <span className="text-blue-400">Pendidikan</span>
           </h2>
-          <p className="text-lg text-slate-400">
-            Jejak langkah perjalanan sekolah saya dari tingkat dasar hingga kejuruan saat ini.
-          </p>
+          <p className="text-base md:text-lg text-slate-400">Perjalanan akademik saya dari Sekolah Dasar hingga SMK Telkom Malang.</p>
         </div>
 
-        {/* Timeline Grid / List */}
         <div className="space-y-6">
           {educationList.map((edu, idx) => (
             <div
               key={idx}
-              className="bg-slate-900 border border-slate-800 hover:border-blue-500/50 p-8 rounded-3xl transition-all duration-300 shadow-xl grid grid-cols-12 gap-6 items-center"
+              className="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 hover:border-blue-500/40 transition shadow-lg"
             >
-              {/* Kolom Kiri: Jenjang & Status */}
-              <div className="col-span-4">
-                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-3 inline-block">
-                  {edu.status}
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
+                <h3 className="text-xl md:text-2xl font-bold text-slate-100">{edu.level}</h3>
+                <span className="text-xs md:text-sm font-semibold px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 w-fit">
+                  {edu.year}
                 </span>
-                <h3 className="text-2xl font-bold text-slate-100 mb-1">
-                  {edu.schoolName}
-                </h3>
-                <p className="text-sm font-medium text-slate-400">{edu.level}</p>
               </div>
-
-              {/* Kolom Tengah: Jurusan & Periode */}
-              <div className="col-span-4 border-l border-slate-800 pl-6">
-                <p className="text-blue-400 font-semibold mb-1">{edu.major}</p>
-                <p className="text-sm text-slate-400 font-mono">{edu.period}</p>
-              </div>
-
-              {/* Kolom Kanan: Deskripsi */}
-              <div className="col-span-4 border-l border-slate-800 pl-6">
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  {edu.description}
-                </p>
-              </div>
+              <h4 className="text-base md:text-lg font-medium text-blue-400 mb-2">{edu.school} • {edu.major}</h4>
+              <p className="text-slate-400 text-sm md:text-base leading-relaxed">{edu.desc}</p>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
