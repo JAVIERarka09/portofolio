@@ -10,7 +10,6 @@ export default function Contact() {
     setStatus("submitting");
 
     const formData = new FormData(e.currentTarget);
-    // Access Key web3forms kamu sudah dipasang di sini
     formData.append("access_key", "b4c35e9b-f707-4eff-ad41-5672024e06ef");
 
     try {
@@ -23,7 +22,7 @@ export default function Contact() {
 
       if (data.success) {
         setStatus("success");
-        (e.target as HTMLFormElement).reset(); // Mengosongkan form setelah terkirim
+        (e.target as HTMLFormElement).reset();
       } else {
         setStatus("error");
       }
@@ -47,13 +46,12 @@ export default function Contact() {
             </p>
             <div className="space-y-3 text-slate-300">
               <p>📍 Malang, Jawa Timur — SMK Telkom Malang</p>
-              <p>📧 arkazorappagsidan@email.com</p>
+              <p>📧 javier.arka@email.com</p>
             </div>
           </div>
 
           {/* Kolom Kanan: Form Aktif */}
           <form onSubmit={handleSubmit} className="col-span-6 space-y-4">
-            {/* Subjek Email yang akan masuk ke inbox kamu */}
             <input type="hidden" name="subject" value="Pesan Baru dari Website Portofolio Javier" />
 
             <div className="grid grid-cols-2 gap-4">
@@ -89,7 +87,6 @@ export default function Contact() {
               {status === "submitting" ? "Sedang Mengirim..." : "Kirim Pesan"}
             </button>
 
-            {/* Notifikasi Berhasil / Gagal */}
             {status === "success" && (
               <p className="text-sm text-emerald-400 font-medium pt-2">
                 ✅ Pesan berhasil terkirim ke email Javier! Terima kasih.
@@ -106,7 +103,7 @@ export default function Contact() {
 
         {/* Footer */}
         <footer className="mt-16 pt-8 border-t border-slate-900 flex items-center justify-between text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} Javier Arka Zora Pagsidan. All rights reserved.</p>
+          <p>© 2026 Javier Arka Zora Pagsidan. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-slate-300 transition">GitHub</a>
             <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-slate-300 transition">LinkedIn</a>
